@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Musical Galleon</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/welcome.css">
+</head>
+<body>
+
+  <div class="bg-layer"></div>
+  <div class="bg-overlay"></div>
+
+  <!-- Scrolling album art — left column -->
+  <div class="album-col left" aria-hidden="true">
+    <div class="album-strip">
+      <img src="assets/images/albums/ASTRO.jpg"    alt="">
+      <img src="assets/images/albums/STARBOY.jpg"  alt="">
+      <img src="assets/images/albums/blonde.jpg"   alt="">
+      <img src="assets/images/albums/cu.jpg"       alt="">
+      <img src="assets/images/albums/EmShow.jpg"   alt="">
+      <img src="assets/images/albums/IGOR.jpg"     alt="">
+      <img src="assets/images/albums/manon.jpg"    alt="">
+      <img src="assets/images/albums/mblue.jpg"    alt="">
+      <img src="assets/images/albums/damn.jpg"     alt="">
+      <img src="assets/images/albums/impala.jpg"   alt="">
+      <img src="assets/images/albums/swimming.jpg" alt="">
+      <img src="assets/images/albums/tset.jpg"     alt="">
+      <!-- duplicate for seamless loop -->
+      <img src="assets/images/albums/ASTRO.jpg"    alt="">
+      <img src="assets/images/albums/STARBOY.jpg"  alt="">
+      <img src="assets/images/albums/blonde.jpg"   alt="">
+      <img src="assets/images/albums/cu.jpg"       alt="">
+      <img src="assets/images/albums/EmShow.jpg"   alt="">
+      <img src="assets/images/albums/IGOR.jpg"     alt="">
+      <img src="assets/images/albums/manon.jpg"    alt="">
+      <img src="assets/images/albums/mblue.jpg"    alt="">
+      <img src="assets/images/albums/damn.jpg"     alt="">
+      <img src="assets/images/albums/impala.jpg"   alt="">
+      <img src="assets/images/albums/swimming.jpg" alt="">
+      <img src="assets/images/albums/tset.jpg"     alt="">
+    </div>
+  </div>
+
+  <!-- Scrolling album art — right column -->
+  <div class="album-col right" aria-hidden="true">
+    <div class="album-strip">
+      <img src="assets/images/albums/INSANO.jpg"   alt="">
+      <img src="assets/images/albums/mbdtf.jpg"    alt="">
+      <img src="assets/images/albums/Midnights.jpg"alt="">
+      <img src="assets/images/albums/NIRVANA.jpg"  alt="">
+      <img src="assets/images/albums/pinkfloyd.jpg"alt="">
+      <img src="assets/images/albums/RED.jpg"      alt="">
+      <img src="assets/images/albums/2121.jpg"     alt="">
+      <img src="assets/images/albums/lana.jpg"     alt="">
+      <img src="assets/images/albums/mmfood.jpg"   alt="">
+      <img src="assets/images/albums/pinktape.jpg" alt="">
+      <img src="assets/images/albums/salad.jpg"    alt="">
+      <img src="assets/images/albums/scorpion.jpg" alt="">
+      <!-- duplicate -->
+      <img src="assets/images/albums/INSANO.jpg"   alt="">
+      <img src="assets/images/albums/mbdtf.jpg"    alt="">
+      <img src="assets/images/albums/Midnights.jpg"alt="">
+      <img src="assets/images/albums/NIRVANA.jpg"  alt="">
+      <img src="assets/images/albums/pinkfloyd.jpg"alt="">
+      <img src="assets/images/albums/RED.jpg"      alt="">
+      <img src="assets/images/albums/2121.jpg"     alt="">
+      <img src="assets/images/albums/lana.jpg"     alt="">
+      <img src="assets/images/albums/mmfood.jpg"   alt="">
+      <img src="assets/images/albums/pinktape.jpg" alt="">
+      <img src="assets/images/albums/salad.jpg"    alt="">
+      <img src="assets/images/albums/scorpion.jpg" alt="">
+    </div>
+  </div>
+
+  <!-- Center content -->
+  <div class="center">
+    <div class="logo-area">
+      <h1 class="title-display site-title">The Musical Galleon</h1>
+      <p class="site-tagline">Chart yer course through sound</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="cards">
+      <div class="card" onclick="window.location.href='quiz.html'">
+        <div class="card-icon">&#9841;</div>
+        <div class="card-title">Take the Quiz</div>
+        <p class="card-desc">8 questions. Stop being a coward and find out what ye actually are.</p>
+        <button class="btn">Begin &rarr;</button>
+      </div>
+
+      <span class="or-sep">or</span>
+
+      <div class="card">
+        <div class="card-icon">&#127922;</div>
+        <div class="card-title">Random Genre</div>
+        <p class="card-desc">Too scared for questions? Let the sea pick yer sorry genre.</p>
+        <button class="btn" onclick="randomGenre()">Try Luck &rarr;</button>
+        <div id="random-result" role="status"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/welcome.js"></script>
+<footer style="position:relative;z-index:10;text-align:center;padding:16px;font-family:'Cinzel',serif;font-size:0.52rem;letter-spacing:3px;color:rgba(201,168,76,0.3);text-transform:uppercase;">Made with love by Inder</footer>
+</body>
+</html>

@@ -1,0 +1,178 @@
+/* =============================================================
+   welcome.css — Styles for welcome.html
+   The Musical Galleon
+   ============================================================= */
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bg-layer {
+  background-image: url('../assets/backgrounds/resultbg.gif');
+  filter: brightness(0.4) saturate(0.65);
+}
+
+.bg-overlay {
+  background: radial-gradient(ellipse 60% 80% at center, transparent 20%, rgba(0, 0, 0, 0.82) 100%);
+}
+
+/* ── Scrolling album columns ───────────────────────────────── */
+.album-col {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  z-index: 2;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.album-col.left  { left: 0; }
+.album-col.right { right: 0; }
+
+.album-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px;
+}
+
+.album-strip img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 3px;
+  opacity: 0.65;
+  transition: opacity 0.3s;
+}
+
+.album-strip img:hover { opacity: 1; }
+
+.album-col.left  .album-strip { animation: scrollUp   60s linear infinite; }
+.album-col.right .album-strip { animation: scrollDown 70s linear infinite; }
+
+@keyframes scrollUp   { from { transform: translateY(0);    } to { transform: translateY(-50%); } }
+@keyframes scrollDown { from { transform: translateY(-50%); } to { transform: translateY(0);    } }
+
+/* ── Center content ────────────────────────────────────────── */
+.center {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 220px;
+}
+
+/* ── Logo ──────────────────────────────────────────────────── */
+.logo-area {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 1s ease both;
+}
+
+.site-title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+.site-tagline {
+  font-family: var(--font-heading);
+  font-size: 0.62rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--parchment);
+  opacity: 0.45;
+  margin-top: 8px;
+}
+
+.logo-area .divider {
+  width: 280px;
+  margin: 24px auto 0;
+  animation: fadeIn 1.2s ease 0.3s both;
+}
+
+/* ── Cards ─────────────────────────────────────────────────── */
+.cards {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  animation: fadeInUp 1s ease 0.5s both;
+}
+
+.card {
+  background: rgba(10, 6, 8, 0.78);
+  border: 1px solid var(--gold-dim);
+  padding: 32px 36px;
+  text-align: center;
+  width: 230px;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 30px rgba(201, 168, 76, 0.2);
+  transform: translateY(-3px);
+}
+
+.card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.card-desc {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--parchment);
+  opacity: 0.65;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.or-sep {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--gold);
+  opacity: 0.45;
+}
+
+#random-result {
+  margin-top: 14px;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--gold-light);
+  min-height: 18px;
+  text-align: center;
+  display: none;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .album-col  { width: 90px; }
+  .center     { padding: 0 100px; }
+  .cards      { flex-direction: column; gap: 12px; }
+  .site-title { font-size: 1.5rem; }
+  .card       { width: 200px; }
+}
+
+@media (max-width: 480px) {
+  .album-col { display: none; }
+  .center    { padding: 20px; }
+}

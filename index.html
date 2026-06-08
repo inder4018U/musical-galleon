@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Musical Galleon</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+  <div class="bg-layer"></div>
+  <div class="bg-overlay"></div>
+  <div class="vignette"></div>
+
+  <div id="app">
+
+    <!-- Intro / boarding screen -->
+    <div id="intro-box">
+      <h1 class="title-display page-title">The Musical Galleon</h1>
+      <p class="page-subtitle">Navigator of Sound &nbsp;&middot;&nbsp; Est. Anno Domini MMXXIV</p>
+      <div class="divider"></div>
+
+      <p class="intro-text">
+        So here ye are &mdash; washed up on these shores like a sorry piece of driftwood,
+        ears full of the same three songs ye&rsquo;ve been playin&rsquo; on repeat since god knows when.
+        Pathetic. The Musical Galleon doesn&rsquo;t suffer fools lightly, but it&rsquo;ll take ye anyway.
+        <br><br>
+        Eight questions stand between ye and the truth of what kind of listener ye really are.
+        Not what ye <em>think</em> ye are &mdash; what ye actually are, deep in the bilge of yer soul.
+        Answer honest, ye coward, and this ship will haul ye to a genre that fits ye better
+        than anything yer mates ever recommended.
+        <br><br>
+        The Galleon has charted these waters for years. It has seen pop fans who thought
+        they were jazz heads. It has seen phonk demons hiding behind lo-fi playlists.
+        It does not lie. It does not flatter. <em>It just tells ye where ye belong.</em>
+        <br><br>
+        So are ye boarding or not? Because the tide doesn&rsquo;t wait for cowards,
+        and Davy Jones has a playlist &mdash; and trust me, <em>ye don&rsquo;t want to end up on it.</em>
+      </p>
+
+      <button class="btn" onclick="showSignIn()">&#9875; Board The Galleon</button>
+    </div>
+
+    <!-- Sign-in form -->
+    <div id="signin-box">
+      <h1 class="title-display page-title">&#9875;</h1>
+      <p class="page-subtitle">State yer name &amp; password</p>
+      <div class="divider"></div>
+
+      <div class="input-wrap">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Who goes there..." autocomplete="off">
+      </div>
+
+      <div class="input-wrap">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="The secret word...">
+      </div>
+
+      <div class="form-links">
+        <a href="#">Forgot yer password?</a>
+        <a href="#">Seek membership</a>
+      </div>
+
+      <button class="btn login-btn" onclick="validateLogin()">Set Sail &rarr;</button>
+      <div id="error-msg" role="alert"></div>
+      <p class="credentials-hint">username: User &nbsp;&middot;&nbsp; password: admin</p>
+    </div>
+
+  </div>
+
+  <script src="js/login.js"></script>
+<footer style="position:relative;z-index:10;text-align:center;padding:16px;font-family:'Cinzel',serif;font-size:0.52rem;letter-spacing:3px;color:rgba(201,168,76,0.3);text-transform:uppercase;">Made with love by Inder</footer>
+</body>
+</html>

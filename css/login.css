@@ -1,0 +1,213 @@
+/* =============================================================
+   login.css — Styles for index.html (login + intro screen)
+   The Musical Galleon
+   ============================================================= */
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg-layer {
+  background-image: url('../assets/backgrounds/loginbg.gif');
+  filter: brightness(0.42) saturate(0.7);
+}
+
+/* ── Layout ────────────────────────────────────────────────── */
+#app {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Intro box ─────────────────────────────────────────────── */
+#intro-box {
+  max-width: 720px;
+  width: 90%;
+  padding: 50px 60px;
+  background: rgba(10, 6, 8, 0.82);
+  border: 1px solid var(--gold);
+  box-shadow:
+    0 0 60px rgba(139, 26, 26, 0.3),
+    inset 0 0 40px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#intro-box.hide {
+  opacity: 0;
+  transform: scale(0.96);
+  pointer-events: none;
+}
+
+#intro-box .divider {
+  width: 80%;
+  margin: 0 auto 24px;
+}
+
+/* ── Intro text ────────────────────────────────────────────── */
+.page-title {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  margin-bottom: 6px;
+}
+
+.page-subtitle {
+  font-family: var(--font-heading);
+  font-size: 0.62rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--parchment);
+  opacity: 0.5;
+  margin-bottom: 28px;
+}
+
+.intro-text {
+  font-family: var(--font-body);
+  font-size: clamp(0.82rem, 1.5vw, 0.95rem);
+  color: var(--parchment);
+  line-height: 1.9;
+  text-align: justify;
+  opacity: 0.88;
+}
+
+.intro-text em {
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+#intro-box .btn {
+  margin-top: 32px;
+  padding: 13px 44px;
+  font-size: 0.82rem;
+}
+
+/* ── Sign-in box ───────────────────────────────────────────── */
+#signin-box {
+  max-width: 400px;
+  width: 90%;
+  padding: 48px 50px;
+  background: rgba(10, 6, 8, 0.9);
+  border: 1px solid var(--gold);
+  box-shadow:
+    0 0 80px rgba(139, 26, 26, 0.4),
+    inset 0 0 40px rgba(0, 0, 0, 0.6);
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
+  position: absolute;
+}
+
+#signin-box.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+#signin-box .page-title {
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+
+#signin-box .page-subtitle {
+  margin-bottom: 32px;
+}
+
+#signin-box .divider {
+  width: 80%;
+  margin: 0 auto 28px;
+}
+
+/* ── Form fields ───────────────────────────────────────────── */
+.input-wrap {
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.input-wrap label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.65;
+  margin-bottom: 8px;
+}
+
+.input-wrap input {
+  width: 100%;
+  padding: 11px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--parchment);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-wrap input:focus {
+  border-bottom-color: var(--gold);
+}
+
+.input-wrap input::placeholder {
+  color: rgba(232, 213, 163, 0.28);
+}
+
+/* ── Form footer ───────────────────────────────────────────── */
+.form-links {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.form-links a {
+  font-family: var(--font-heading);
+  font-size: 0.58rem;
+  letter-spacing: 2px;
+  color: var(--gold);
+  opacity: 0.45;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.form-links a:hover {
+  opacity: 1;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 13px;
+  font-size: 0.75rem;
+}
+
+/* ── Error + hint ──────────────────────────────────────────── */
+#error-msg {
+  margin-top: 13px;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  color: #e05555;
+  min-height: 18px;
+}
+
+.credentials-hint {
+  margin-top: 18px;
+  font-family: var(--font-heading);
+  font-size: 0.58rem;
+  letter-spacing: 1px;
+  color: rgba(201, 168, 76, 0.28);
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  #intro-box  { padding: 32px 24px; }
+  #signin-box { padding: 32px 24px; }
+}
