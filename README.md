@@ -108,7 +108,7 @@ All fonts are loaded from Google Fonts:
 
 ## Feedback Form
 
-The feedback button on every genre result page links to a Google Form. To swap it for your own form, replace the URL in `css/genre.css` or directly in each genre HTML file.
+The feedback button on every genre result page links to a Google Form. 
 
 ---
 
